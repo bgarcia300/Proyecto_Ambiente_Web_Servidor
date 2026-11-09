@@ -1,0 +1,201 @@
+/* ==========================================================
+   mapa.css - Estilos de la pagina de Mapa
+   (usa las variables de inicio.css)
+   Mobile-first: lo de PC va en el media query.
+   ========================================================== */
+
+/* ==================== Filtros ==================== */
+.filtros-tipo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1);
+}
+
+/* Boton de tipo: oscuro cuando esta activo */
+.btn-tipo {
+    padding: 6px 12px;
+    background-color: var(--color-menu);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-tipo:hover {
+    background-color: var(--color-menu-activo);
+}
+
+/* Cuando se apaga el filtro */
+.btn-tipo.apagado {
+    background-color: white;
+    color: var(--color-texto-suave);
+    border: 1px solid var(--color-borde);
+}
+
+.filtros-opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--espacio-2);
+    margin-top: var(--espacio-2);
+}
+
+/* Interruptor (checkbox con forma de switch) */
+.interruptor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: var(--texto-chico);
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.interruptor input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.interruptor-barra {
+    position: relative;
+    flex-shrink: 0;
+    width: 40px;
+    height: 22px;
+    border-radius: 20px;
+    background-color: var(--color-borde);
+}
+
+.interruptor-barra::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.interruptor input:checked + .interruptor-barra {
+    background-color: var(--color-menu);
+}
+
+.interruptor input:checked + .interruptor-barra::after {
+    left: 20px;
+}
+
+.interruptor input:focus-visible + .interruptor-barra {
+    outline: 3px solid var(--color-info);
+    outline-offset: 2px;
+}
+
+/* Boton con borde (Usar mi ubicacion) */
+.btn-borde {
+    grid-column: 1 / -1;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    font-size: var(--texto-chico);
+    font-weight: bold;
+}
+
+/* ==================== Mapa ==================== */
+#mapa {
+    height: 140px;
+    margin-bottom: var(--espacio-2);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    z-index: 0;
+}
+
+/* ==================== Tarjetas de lugares ==================== */
+.lugares {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-2);
+}
+
+.lugares .tarjeta {
+    margin-bottom: 0;
+}
+
+.lugar-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--espacio-1);
+}
+
+.lugar-titulo h2 {
+    margin: 0;
+}
+
+.badge-tipo {
+    flex-shrink: 0;
+    background-color: var(--color-link);
+}
+
+.lugar-direccion {
+    margin-bottom: var(--espacio-1);
+}
+
+.capacidad {
+    margin-bottom: var(--espacio-1);
+    font-size: 13px;
+}
+
+.capacidad-texto {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--espacio-1);
+}
+
+.servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+}
+
+.servicio {
+    padding: 3px 12px;
+    border-radius: 6px;
+    background-color: var(--color-superficie-2);
+    font-size: 13px;
+}
+
+.lugar-telefono {
+    display: inline-block;
+}
+
+/* Lugar saturado: se ve apagado */
+.lugar-saturado {
+    opacity: 0.5;
+}
+
+.lugar-saturado .badge-tipo {
+    background-color: var(--color-borde);
+    color: var(--color-texto-suave);
+}
+
+/* ==================== Version para PC ==================== */
+@media (min-width: 768px) {
+    .filtros-opciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--espacio-3);
+    }
+
+    .btn-borde {
+        grid-column: auto;
+        padding: 8px 16px;
+    }
+
+    #mapa {
+        height: 340px;
+    }
+
+    .lugares {
+        grid-template-columns: 1fr 1fr;
+    }
+}

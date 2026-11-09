@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de emergencia | RescateVivo</title>
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+    <!-- MENU: copiar este bloque igual en todas las paginas (en /pages cambia el prefijo a ../) -->
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace activo" href="index.html" aria-current="page"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace" href="pages/perfil.html"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace" href="pages/plan.html"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace" href="pages/mochila.html"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace" href="pages/mapa.html"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace" href="pages/voluntarios.html"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Panel de emergencia</h1>
+        <p>Cantón Central — Cuenca Río Grande</p>
+    </header>
+
+    <main class="contenido">
+
+        <!-- Alerta humana + indice ITH -->
+        <div class="fila-dos">
+            <section class="tarjeta tarjeta-alerta" aria-labelledby="titulo-alerta" role="alert">
+                <div class="alerta-titulo">
+                    <h2 id="titulo-alerta">Alerta humana · Inundación</h2>
+                    <span class="badge badge-peligro">Alto</span>
+                </div>
+                <p class="alerta-detalle">Lluvias intensas acumuladas de 180 mm en 12 h. Desbordamiento probable en zonas bajas durante las próximas 6 horas.</p>
+                <p class="texto-suave">Actualizado hace 12 min</p>
+            </section>
+
+            <section class="tarjeta tarjeta-aviso" aria-labelledby="titulo-ith">
+                <div class="alerta-titulo">
+                    <h2 id="titulo-ith">Índice ITH animal</h2>
+                    <span class="badge badge-borde">Peligro</span>
+                </div>
+                <p class="ith-numero" id="ith-numero">0</p>
+                <p class="alerta-detalle">Alerta: estrés térmico moderado-alto en animales</p>
+                <div class="progreso" id="ith-barra" role="progressbar" aria-label="Índice ITH animal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progreso-relleno" id="ith-relleno"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Boton S.O.S. -->
+        <a class="btn btn-sos btn-bloque boton-sos-grande" href="#">🚨 Enviar S.O.S.</a>
+
+        <!-- Atajos -->
+        <nav class="atajos" aria-label="Atajos">
+            <a class="atajo" href="pages/mapa.html">
+                <span class="atajo-icono" aria-hidden="true">📍</span>
+                <span><strong>Mapa de refugios</strong><small>189 espacios animales libres</small></span>
+            </a>
+            <a class="atajo" href="pages/plan.html">
+                <span class="atajo-icono" aria-hidden="true">📋</span>
+                <span><strong>Plan de evacuación</strong><small>Protocolo personalizado</small></span>
+            </a>
+            <a class="atajo" href="pages/mochila.html">
+                <span class="atajo-icono" aria-hidden="true">🎒</span>
+                <span><strong>Mochila 72 h</strong><small>0% lista</small></span>
+            </a>
+        </nav>
+
+        <!-- Otras alertas + nucleo registrado -->
+        <div class="fila-dos">
+            <section class="tarjeta" aria-labelledby="titulo-otras">
+                <h2 id="titulo-otras">Otras alertas activas</h2>
+                <ul class="lista-simple" id="lista-alertas"></ul>
+            </section>
+
+            <section class="tarjeta" aria-labelledby="titulo-nucleo">
+                <h2 id="titulo-nucleo">👪 Mi núcleo registrado</h2>
+                <p>2 adultos · 0 niñez · 0 adultos mayores · 0 con movilidad reducida</p>
+                <p class="texto-suave alerta-detalle">Aún no registrás animales.</p>
+                <a class="enlace" href="pages/perfil.html">Completar perfil →</a>
+            </section>
+        </div>
+
+        <!-- Ultimos S.O.S. -->
+        <section class="tarjeta" aria-labelledby="titulo-sos">
+            <h2 id="titulo-sos">Últimos S.O.S. de la zona</h2>
+            <ul class="lista-simple" id="lista-sos"></ul>
+        </section>
+
+    </main>
+
+    <script src="js/inicio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,491 @@
+/* ==========================================================
+   styles.css - TODOS LOS ESTILOS DEL PROYECTO
+   Secciones: 1. Variables  2. Base  3. Menu  4. Tarjetas y
+   botones  5. Formularios y listas  6. Inicio
+   Mobile-first: lo de PC va en los media query.
+   ========================================================== */
+
+/* ==================== 1. VARIABLES ==================== */
+:root {
+    /* Fondo y superficies (contenido claro como en el Figma) */
+    --color-fondo: #ffffff;
+    --color-superficie: #ffffff;
+    --color-superficie-2: #eef2f7;
+    --color-borde: #d9dee8;
+
+    /* Texto */
+    --color-texto: #0f2038;
+    --color-texto-suave: #5b6b82;
+    --color-link: #0b6e8a;
+
+    /* Menu lateral (azul oscuro) */
+    --color-menu: #112640;
+    --color-menu-activo: #1c3a5e;
+    --color-menu-texto: #c5d0e0;
+
+    /* Colores de accion y estado */
+    --color-sos: #d90000;
+    --color-sos-hover: #b00000;
+    --color-info: #3b82f6;
+    --color-exito: #0a7a3f;
+    --color-aviso: #f08c1a;
+
+    /* Fondos de tarjetas de alerta */
+    --color-alerta-fondo: #fbe9ec;
+    --color-alerta-borde: #e8b4bc;
+    --color-aviso-fondo: #fdf0e1;
+    --color-aviso-borde: #f0cf9f;
+    --color-icono-fondo: #e3f1f5;
+
+    /* Fuente y tamanos */
+    --fuente: Arial, Helvetica, sans-serif;
+    --texto-chico: 14px;
+    --texto-normal: 16px;
+    --texto-titulo: 24px;
+
+    /* Espacios y bordes */
+    --espacio-1: 8px;
+    --espacio-2: 16px;
+    --espacio-3: 24px;
+    --radio: 10px;
+
+    /* Medidas del menu */
+    --ancho-menu: 230px;
+    --alto-menu-movil: 64px;
+}
+
+/* ==================== 2. BASE ==================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-bottom: var(--alto-menu-movil);
+    font-family: var(--fuente);
+    font-size: var(--texto-normal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    margin: 0 0 var(--espacio-1) 0;
+}
+
+h1 { font-size: var(--texto-titulo); }
+h2 { font-size: 18px; }
+h3 { font-size: var(--texto-normal); }
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+/* Foco visible para quien navega con teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-info);
+    outline-offset: 2px;
+}
+
+/* ==================== 3. MENU (celular: barra de abajo) ==================== */
+.menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--alto-menu-movil);
+    background-color: var(--color-menu);
+    z-index: 10;
+}
+
+.menu-marca,
+.menu-sos {
+    display: none;
+}
+
+.menu-lista {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-lista li {
+    flex: 1;
+}
+
+.menu-enlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    height: 100%;
+    font-size: 11px;
+    text-decoration: none;
+    color: var(--color-menu-texto);
+}
+
+.menu-icono {
+    font-size: 20px;
+}
+
+.menu-enlace:hover {
+    color: white;
+}
+
+.menu-enlace.activo {
+    color: white;
+    font-weight: bold;
+    background-color: var(--color-menu-activo);
+}
+
+/* ==================== 4. TARJETAS Y BOTONES ==================== */
+/* ---------- Contenido de las paginas ---------- */
+.encabezado-pagina {
+    padding: var(--espacio-3) var(--espacio-2) var(--espacio-2) var(--espacio-2);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.encabezado-pagina p {
+    color: var(--color-texto-suave);
+    font-size: var(--texto-chico);
+}
+
+.contenido {
+    padding: var(--espacio-2);
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjeta {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: var(--espacio-2);
+    margin-bottom: var(--espacio-2);
+    box-shadow: 0 1px 3px rgba(15, 32, 56, 0.08);
+}
+
+.tarjeta-alerta {
+    background-color: var(--color-alerta-fondo);
+    border-color: var(--color-alerta-borde);
+}
+
+.tarjeta-aviso {
+    background-color: var(--color-aviso-fondo);
+    border-color: var(--color-aviso-borde);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radio);
+    background-color: var(--color-superficie-2);
+    color: var(--color-texto);
+    font-size: var(--texto-normal);
+    font-family: var(--fuente);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-borde);
+}
+
+.btn-sos {
+    background-color: var(--color-sos);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-sos:hover {
+    background-color: var(--color-sos-hover);
+}
+
+.btn-bloque {
+    display: block;
+    width: 100%;
+}
+
+.enlace {
+    color: var(--color-link);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.enlace:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Etiquetas (badges) ---------- */
+.badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-info);
+}
+
+.badge-peligro { background-color: var(--color-sos); }
+.badge-aviso   { background-color: var(--color-aviso); }
+.badge-exito   { background-color: var(--color-exito); }
+
+/* Etiqueta blanca con borde (Pendiente, En proceso...) */
+.badge-borde {
+    background-color: white;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+/* ---------- Barra de progreso ---------- */
+.progreso {
+    width: 100%;
+    height: 8px;
+    background-color: var(--color-borde);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progreso-relleno {
+    height: 100%;
+    background-color: var(--color-menu);
+}
+
+/* ==================== 5. FORMULARIOS Y LISTAS ==================== */
+/* ---------- Formularios ---------- */
+label {
+    display: block;
+    margin-top: var(--espacio-2);
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: var(--texto-chico);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    background-color: white;
+    color: var(--color-texto);
+    font-size: var(--texto-normal);
+    font-family: var(--fuente);
+}
+
+.invalido {
+    border: 2px solid var(--color-sos);
+}
+
+/* ---------- Listas dentro de tarjetas ---------- */
+.lista-simple {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-simple li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-2);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.lista-simple li:last-child {
+    border-bottom: none;
+}
+
+.texto-suave {
+    color: var(--color-texto-suave);
+    font-size: var(--texto-chico);
+}
+
+/* ---------- Version para PC: menu a la izquierda ---------- */
+@media (min-width: 768px) {
+    body {
+        padding-bottom: 0;
+        padding-left: var(--ancho-menu);
+    }
+
+    .menu {
+        top: 0;
+        right: auto;
+        bottom: 0;
+        width: var(--ancho-menu);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: var(--espacio-2);
+    }
+
+    .menu-marca {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: var(--espacio-3);
+        color: white;
+    }
+
+    .menu-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: var(--color-sos);
+    }
+
+    .menu-marca strong,
+    .menu-marca span {
+        display: block;
+    }
+
+    .menu-marca span.menu-subtitulo {
+        font-size: 12px;
+        color: var(--color-menu-texto);
+    }
+
+    .menu-lista {
+        flex-direction: column;
+        height: auto;
+        gap: 4px;
+    }
+
+    .menu-lista li {
+        flex: none;
+    }
+
+    .menu-enlace {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 12px;
+        height: auto;
+        padding: 10px 12px;
+        border-radius: 8px;
+        font-size: var(--texto-normal);
+    }
+
+    .menu-sos {
+        display: block;
+        margin-top: auto;
+    }
+
+    .encabezado-pagina {
+        padding: var(--espacio-3) 32px;
+    }
+
+    .contenido {
+        padding: var(--espacio-3) 32px;
+        max-width: 1100px;
+    }
+}
+
+/* ==================== 6. PAGINA DE INICIO ==================== */
+/* Las dos tarjetas de arriba y las dos de abajo: 1 columna en celular */
+.fila-dos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 var(--espacio-2);
+}
+
+.alerta-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-1);
+}
+
+.alerta-titulo h2 {
+    margin: 0;
+}
+
+.alerta-detalle {
+    margin: var(--espacio-1) 0;
+}
+
+.ith-numero {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Boton S.O.S. grande con aro rojo claro */
+.boton-sos-grande {
+    padding: 22px;
+    margin-bottom: var(--espacio-2);
+    font-size: 24px;
+    box-shadow: 0 0 0 8px rgba(217, 0, 0, 0.12);
+}
+
+/* Atajos a otros modulos */
+.atajos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-2);
+    margin: var(--espacio-3) 0 var(--espacio-2) 0;
+}
+
+.atajo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px var(--espacio-2);
+    text-decoration: none;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    box-shadow: 0 1px 3px rgba(15, 32, 56, 0.08);
+}
+
+.atajo:hover {
+    background-color: var(--color-superficie-2);
+}
+
+.atajo-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--color-icono-fondo);
+    font-size: 20px;
+}
+
+.atajo strong,
+.atajo small {
+    display: block;
+}
+
+.atajo small {
+    color: var(--color-texto-suave);
+    font-size: 13px;
+}
+
+.sos-detalle {
+    margin-top: 2px;
+}
+
+@media (min-width: 768px) {
+    .fila-dos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .atajos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

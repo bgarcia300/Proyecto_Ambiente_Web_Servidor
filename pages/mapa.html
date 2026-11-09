@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mapa de refugios | RescateVivo</title>
+    <!-- Leaflet (libreria del mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/mapa.css">
+</head>
+
+<body>
+    <!-- MENU: copiar este bloque igual en todas las paginas (en /pages cambia el prefijo a ../) -->
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace" href="../index.html"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace" href="perfil.html"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace" href="plan.html"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace" href="mochila.html"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace activo" href="mapa.html" aria-current="page"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace" href="voluntarios.html"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Mapa de refugios y recursos</h1>
+        <p>Capacidad humana y animal en vivo</p>
+    </header>
+
+    <main class="contenido">
+
+        <!-- Filtros -->
+        <section class="tarjeta" aria-label="Filtros del mapa">
+            <div class="filtros-tipo" id="filtros-tipo"></div>
+
+            <div class="filtros-opciones">
+                <label class="interruptor" for="solo-pet">
+                    <input type="checkbox" id="solo-pet">
+                    <span class="interruptor-barra" aria-hidden="true"></span>
+                    Solo pet-friendly
+                </label>
+
+                <label class="interruptor" for="ocultar-saturados">
+                    <input type="checkbox" id="ocultar-saturados">
+                    <span class="interruptor-barra" aria-hidden="true"></span>
+                    Ocultar saturados
+                </label>
+
+                <button class="btn btn-borde" id="btn-ubicacion" type="button">◎ Usar mi ubicación</button>
+            </div>
+        </section>
+
+        <!-- Mapa -->
+        <div id="mapa" role="region" aria-label="Mapa de refugios"></div>
+
+        <!-- Tarjetas de lugares -->
+        <div class="lugares" id="lista-lugares"></div>
+        <p class="texto-suave" id="mensaje-vacio"></p>
+
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../js/mapa.js"></script>
+</body>
+
+</html>
