@@ -1,0 +1,135 @@
+/* ============================================
+   mochila.css
+   Estilos solo de la pagina de la Mochila.
+   (los colores y componentes vienen de inicio.css)
+   ============================================ */
+
+/* Fondo gris clarito con encabezado blanco, como en el Figma */
+body {
+    background-color: #f6f8fb;
+}
+
+.encabezado-pagina {
+    background-color: white;
+}
+
+/* Contenido centrado */
+.contenido-centrado {
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+/* Tarjeta de progreso */
+.progreso-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-2);
+}
+
+.progreso-cabecera h2 {
+    margin: 0;
+}
+
+.btn-reiniciar {
+    padding: 6px 14px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    font-size: var(--texto-chico);
+    font-weight: bold;
+}
+
+.porcentaje {
+    font-size: 32px;
+    font-weight: bold;
+    margin: var(--espacio-2) 0 var(--espacio-1) 0;
+}
+
+.progreso {
+    height: 10px;
+}
+
+.progreso-detalle {
+    margin-top: var(--espacio-2);
+}
+
+/* Pestañas Humanos / Animales */
+.pestanas {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: var(--espacio-2);
+    background-color: #e8ecf2;
+    border-radius: var(--radio);
+}
+
+.pestana {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-texto-suave);
+    font-size: var(--texto-normal);
+    font-family: var(--fuente);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pestana.activa {
+    background-color: white;
+    color: var(--color-texto);
+    box-shadow: 0 1px 3px rgba(15, 32, 56, 0.15);
+}
+
+/* Lista: cada insumo es una tarjeta */
+.lista-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-items li {
+    margin-bottom: var(--espacio-1);
+}
+
+.item-mochila {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-size: var(--texto-normal);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item-mochila:hover {
+    background-color: var(--color-superficie-2);
+}
+
+/* Las casillas no deben ocupar todo el ancho */
+.item-mochila input {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Insumo ya marcado */
+.item-listo {
+    color: var(--color-texto-suave);
+    text-decoration: line-through;
+}
+
+
+@media (min-width: 768px) {
+    .item-mochila {
+        font-weight: normal;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil familiar y animal | RescateVivo</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+<body>
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace" href="../index.html"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace activo" href="perfil.html" aria-current="page"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace" href="plan.html"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace" href="mochila.html"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace" href="mapa.html"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace" href="voluntarios.html"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Perfil familiar y animal</h1>
+        <p>Base para tus planes personalizados</p>
+    </header>
+
+    <main class="contenido contenido-centrado">
+
+        <!-- Formulario de la familia -->
+        <form id="form-familia" novalidate>
+
+            <section class="tarjeta" aria-labelledby="titulo-contacto">
+                <h2 id="titulo-contacto">Datos de contacto</h2>
+
+                <div class="campos-tres">
+                    <div>
+                        <label for="nombre-completo">Nombre completo</label>
+                        <input type="text" id="nombre-completo" placeholder="Ana Rojas" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="8888-1234" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="ubicacion">Ubicación por defecto</label>
+                        <input type="text" id="ubicacion" placeholder="Los Bajos, Cantón Central" autocomplete="off">
+                    </div>
+                </div>
+            </section>
+
+            <section class="tarjeta" aria-labelledby="titulo-nucleo">
+                <h2 id="titulo-nucleo">Núcleo familiar y vulnerabilidades</h2>
+
+                <div class="campos-cuatro">
+                    <div>
+                        <label for="adultos">Adultos</label>
+                        <input type="number" id="adultos" min="0" value="2">
+                    </div>
+                    <div>
+                        <label for="ninos">Niños y niñas</label>
+                        <input type="number" id="ninos" min="0" value="0">
+                    </div>
+                    <div>
+                        <label for="mayores">Adultos mayores</label>
+                        <input type="number" id="mayores" min="0" value="0">
+                    </div>
+                    <div>
+                        <label for="movilidad">Movilidad reducida</label>
+                        <input type="number" id="movilidad" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="fila-boton">
+                    <button type="submit" class="btn btn-oscuro">Guardar perfil</button>
+                </div>
+                <p id="mensaje-familia" class="mensaje" role="alert"></p>
+            </section>
+
+        </form>
+
+        <!-- Formulario de los animales -->
+        <section class="tarjeta" aria-labelledby="titulo-animal">
+            <h2 id="titulo-animal">🐾 Agregar mascota o animal de producción</h2>
+
+            <form id="form-animal" novalidate>
+                <div class="campos-dos">
+                    <div>
+                        <label for="nombre-animal">Nombre</label>
+                        <input type="text" id="nombre-animal" placeholder="Luna" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="especie">Especie</label>
+                        <select id="especie">
+                            <option value="">Seleccioná una especie</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Caballo">Caballo</option>
+                            <option value="Bovino">Bovino</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="peso">Peso (kg)</label>
+                        <input type="number" id="peso" min="0" step="any" placeholder="18">
+                    </div>
+                    <div>
+                        <label for="carnet">Foto o carné de vacunación</label>
+                        <input type="file" id="carnet" accept="image/*">
+                    </div>
+                </div>
+
+                <label for="observaciones">Observaciones médicas o de manejo</label>
+                <textarea id="observaciones" rows="3" placeholder="Epilepsia, fenobarbital cada 12 h. Reactiva con otros perros."></textarea>
+
+                <label class="interruptor" for="vacunacion">
+                    <input type="checkbox" id="vacunacion">
+                    Vacunación al día
+                </label>
+
+                <div class="fila-boton">
+                    <button type="submit" class="btn btn-oscuro">Guardar animal</button>
+                </div>
+                <p id="mensaje-animal" class="mensaje" role="alert"></p>
+            </form>
+        </section>
+
+        <!-- Lista de animales registrados -->
+        <section class="tarjeta" aria-labelledby="titulo-registrados">
+            <h2 id="titulo-registrados">Animales registrados</h2>
+            <ul class="lista-simple" id="lista-animales"></ul>
+        </section>
+
+    </main>
+
+    <script src="../js/perfil.js"></script>
+</body>
+
+</html>

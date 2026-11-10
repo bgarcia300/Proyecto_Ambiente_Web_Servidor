@@ -1,11 +1,6 @@
-/* ==========================================================
-   styles.css - TODOS LOS ESTILOS DEL PROYECTO
-   Secciones: 1. Variables  2. Base  3. Menu  4. Tarjetas y
-   botones  5. Formularios y listas  6. Inicio
-   Mobile-first: lo de PC va en los media query.
-   ========================================================== */
 
-/* ==================== 1. VARIABLES ==================== */
+
+/* ====================  VARIABLES  */
 :root {
     /* Fondo y superficies (contenido claro como en el Figma) */
     --color-fondo: #ffffff;
@@ -54,7 +49,7 @@
     --alto-menu-movil: 64px;
 }
 
-/* ==================== 2. BASE ==================== */
+/* ====================  BASE */
 * {
     box-sizing: border-box;
 }
@@ -81,7 +76,7 @@ p { margin: 0; }
 
 a { color: inherit; }
 
-/* Foco visible para quien navega con teclado */
+/* borde azul  para  navegar con teclado */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -91,7 +86,7 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-/* ==================== 3. MENU (celular: barra de abajo) ==================== */
+/* ==================== MENU (celular_barra de abajo)  */
 .menu {
     position: fixed;
     left: 0;
@@ -145,8 +140,8 @@ textarea:focus-visible {
     background-color: var(--color-menu-activo);
 }
 
-/* ==================== 4. TARJETAS Y BOTONES ==================== */
-/* ---------- Contenido de las paginas ---------- */
+/* ==================== 4. TARJETAS Y BOTONES  */
+/* ---------- Contenido paginas */
 .encabezado-pagina {
     padding: var(--espacio-3) var(--espacio-2) var(--espacio-2) var(--espacio-2);
     border-bottom: 1px solid var(--color-borde);
@@ -161,7 +156,7 @@ textarea:focus-visible {
     padding: var(--espacio-2);
 }
 
-/* ---------- Tarjetas ---------- */
+/* ---------- Tarjetas  */
 .tarjeta {
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
@@ -181,7 +176,7 @@ textarea:focus-visible {
     border-color: var(--color-aviso-borde);
 }
 
-/* ---------- Botones ---------- */
+/* ---------- Botones  */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -225,7 +220,7 @@ textarea:focus-visible {
     text-decoration: underline;
 }
 
-/* ---------- Etiquetas (badges) ---------- */
+/* ---------- badges  */
 .badge {
     display: inline-block;
     padding: 3px 12px;
@@ -247,7 +242,7 @@ textarea:focus-visible {
     border: 1px solid var(--color-borde);
 }
 
-/* ---------- Barra de progreso ---------- */
+/* ---------- Barra de progreso  */
 .progreso {
     width: 100%;
     height: 8px;
@@ -261,7 +256,7 @@ textarea:focus-visible {
     background-color: var(--color-menu);
 }
 
-/* ==================== 5. FORMULARIOS Y LISTAS ==================== */
+/* ====================  FORMULARIOS Y LISTAS  */
 /* ---------- Formularios ---------- */
 label {
     display: block;
@@ -313,7 +308,7 @@ textarea {
     font-size: var(--texto-chico);
 }
 
-/* ---------- Version para PC: menu a la izquierda ---------- */
+/* ----------  para PC: menu a la izquierda ---------- */
 @media (min-width: 768px) {
     body {
         padding-bottom: 0;
@@ -394,7 +389,7 @@ textarea {
     }
 }
 
-/* ==================== 6. PAGINA DE INICIO ==================== */
+/* ====================  PAGINA DE INICIO  */
 /* Las dos tarjetas de arriba y las dos de abajo: 1 columna en celular */
 .fila-dos {
     display: grid;
@@ -423,7 +418,7 @@ textarea {
     line-height: 1.2;
 }
 
-/* Boton S.O.S. grande con aro rojo claro */
+/* Boton S.O.S. grande  */
 .boton-sos-grande {
     padding: 22px;
     margin-bottom: var(--espacio-2);
@@ -431,7 +426,7 @@ textarea {
     box-shadow: 0 0 0 8px rgba(217, 0, 0, 0.12);
 }
 
-/* Atajos a otros modulos */
+/* Atajos */
 .atajos {
     display: grid;
     grid-template-columns: 1fr;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mochila de 72 horas | RescateVivo</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/mochila.css">
+</head>
+
+<body>
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace" href="../index.html"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace" href="perfil.html"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace" href="plan.html"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace activo" href="mochila.html" aria-current="page"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace" href="mapa.html"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace" href="voluntarios.html"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Mochila de 72 horas</h1>
+        <p>Humanos y animales, sin olvidos</p>
+    </header>
+
+    <main class="contenido contenido-centrado">
+
+        <!-- Progreso general -->
+        <section class="tarjeta" aria-labelledby="titulo-progreso">
+            <div class="progreso-cabecera">
+                <h2 id="titulo-progreso">Progreso general</h2>
+                <button type="button" class="btn btn-reiniciar" id="btn-reiniciar">↺ Reiniciar</button>
+            </div>
+
+            <p class="porcentaje" id="mochila-porcentaje">0% de la mochila lista</p>
+
+            <div class="progreso">
+                <div class="progreso-relleno" id="mochila-relleno"></div>
+            </div>
+
+            <p class="texto-suave progreso-detalle" id="mochila-detalle">Humanos 0% · Animales 0% · 17 insumos sugeridos según tu perfil.</p>
+        </section>
+
+        <!-- Pestañas -->
+        <div class="pestanas">
+            <button type="button" class="pestana activa" id="btn-humanos">Humanos (0%)</button>
+            <button type="button" class="pestana" id="btn-animales">Animales (0%)</button>
+        </div>
+
+        <!-- Lista de insumos -->
+        <ul class="lista-items" id="lista-items"></ul>
+
+    </main>
+
+    <script src="../js/mochila.js"></script>
+</body>
+
+</html>

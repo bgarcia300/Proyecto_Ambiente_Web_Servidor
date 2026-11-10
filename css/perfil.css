@@ -1,0 +1,129 @@
+/* ============================================
+   perfil.css
+   Estilos solo de la pagina de Perfil familiar.
+   (los colores y componentes vienen de inicio.css)
+   ============================================ */
+
+/* Fondo gris clarito con encabezado blanco, como en el Figma */
+body {
+    background-color: #f6f8fb;
+}
+
+.encabezado-pagina {
+    background-color: white;
+}
+
+/* Contenido centrado */
+.contenido-centrado {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Campos en columnas: en celular van de a 1 (o 2 para los numeros) */
+.campos-dos,
+.campos-tres {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 var(--espacio-2);
+}
+
+.campos-cuatro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--espacio-2);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Boton azul oscuro a la derecha */
+.fila-boton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--espacio-2);
+}
+
+.btn-oscuro {
+    background-color: var(--color-menu);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-oscuro:hover {
+    background-color: var(--color-menu-activo);
+}
+
+/* Interruptor "Vacunacion al dia" */
+.interruptor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.interruptor input {
+    appearance: none;
+    position: relative;
+    width: 44px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 24px;
+    background-color: var(--color-borde);
+    cursor: pointer;
+}
+
+/* La bolita del interruptor */
+.interruptor input::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.interruptor input:checked {
+    background-color: var(--color-menu);
+}
+
+.interruptor input:checked::before {
+    left: 23px;
+}
+
+/* Mensajes del formulario (se muestran con JS) */
+.mensaje {
+    display: none;
+    margin-top: var(--espacio-2);
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.error {
+    background-color: var(--color-alerta-fondo);
+    color: var(--color-sos-hover);
+}
+
+.exito {
+    background-color: #dff3e6;
+    color: var(--color-exito);
+}
+
+@media (min-width: 768px) {
+    .campos-dos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campos-tres {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .campos-cuatro {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
