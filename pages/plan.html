@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plan de evacuación | RescateVivo</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/plan.css">
+</head>
+
+<body>
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace" href="../index.html"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace" href="perfil.html"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace activo" href="plan.html" aria-current="page"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace" href="mochila.html"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace" href="mapa.html"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace" href="voluntarios.html"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Plan de evacuación</h1>
+        <p>Protocolo personalizado</p>
+    </header>
+
+    <main class="contenido contenido-centrado">
+
+        <!-- Situacion actual -->
+        <section class="tarjeta tarjeta-alerta" aria-labelledby="titulo-situacion" role="alert">
+            <div class="alerta-titulo">
+                <h2 id="titulo-situacion">Situación actual · Inundación</h2>
+                <span class="badge badge-peligro">Alto</span>
+            </div>
+            <p class="alerta-detalle">Desbordamiento probable en zonas bajas durante las próximas 6 horas. Si vivís cerca del río, preparate para evacuar.</p>
+            <p class="texto-suave">Tu plan se adapta a tu núcleo familiar y a tus animales.</p>
+        </section>
+
+        <!-- Progreso del plan -->
+        <section class="tarjeta" aria-labelledby="titulo-progreso">
+            <div class="progreso-cabecera">
+                <h2 id="titulo-progreso">Progreso del plan</h2>
+                <button type="button" class="btn btn-reiniciar" id="btn-reiniciar">↺ Reiniciar</button>
+            </div>
+
+            <p class="porcentaje" id="plan-porcentaje">0% del plan listo</p>
+
+            <div class="progreso" id="plan-barra" role="progressbar" aria-label="Progreso del plan" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progreso-relleno" id="plan-relleno"></div>
+            </div>
+
+            <p class="texto-suave progreso-detalle" id="plan-detalle">Antes 0% · Durante 0% · Después 0%</p>
+        </section>
+
+        <!-- Pestañas -->
+        <div class="pestanas">
+            <button type="button" class="pestana activa" id="btn-antes">Antes (0%)</button>
+            <button type="button" class="pestana" id="btn-durante">Durante (0%)</button>
+            <button type="button" class="pestana" id="btn-despues">Después (0%)</button>
+        </div>
+
+        <!-- Pasos de la pestaña elegida -->
+        <ul class="lista-items" id="lista-pasos"></ul>
+
+        <!-- Puntos de encuentro -->
+        <section class="tarjeta" aria-labelledby="titulo-destinos">
+            <h2 id="titulo-destinos">📍 Puntos de encuentro y refugios</h2>
+            <ul class="lista-simple" id="lista-destinos"></ul>
+            <p class="destinos-enlace"><a class="enlace" href="mapa.html">Ver todos en el mapa →</a></p>
+        </section>
+
+        <!-- Contactos de emergencia -->
+        <section class="tarjeta" aria-labelledby="titulo-contactos">
+            <h2 id="titulo-contactos">📞 Contactos de emergencia</h2>
+            <ul class="lista-simple" id="lista-contactos"></ul>
+        </section>
+
+        <section class="tarjeta" aria-labelledby="titulo-nuevo-contacto">
+            <h2 id="titulo-nuevo-contacto">Agregar contacto</h2>
+
+            <form id="form-contacto" novalidate>
+                <div class="campos-tres">
+                    <div>
+                        <label for="nombre-contacto">Nombre</label>
+                        <input type="text" id="nombre-contacto" placeholder="María Rojas" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="telefono-contacto">Teléfono</label>
+                        <input type="tel" id="telefono-contacto" placeholder="8888-1234" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="relacion-contacto">Relación</label>
+                        <select id="relacion-contacto">
+                            <option value="">Seleccioná una opción</option>
+                            <option value="Familiar">Familiar</option>
+                            <option value="Vecino">Vecino o vecina</option>
+                            <option value="Veterinario">Veterinario</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="fila-boton">
+                    <button type="submit" class="btn btn-oscuro">Guardar contacto</button>
+                </div>
+                <p id="mensaje-contacto" class="mensaje" role="alert"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="../js/plan.js"></script>
+</body>
+
+</html>
