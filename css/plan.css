@@ -1,0 +1,226 @@
+/* ============================================
+   plan.css
+   Estilos solo de la pagina del Plan de evacuacion.
+   (los colores y componentes vienen de inicio.css)
+   ============================================ */
+
+/* Fondo gris clarito con encabezado blanco, como en las otras paginas */
+body {
+    background-color: #f6f8fb;
+}
+
+.encabezado-pagina {
+    background-color: white;
+}
+
+/* Contenido centrado */
+.contenido-centrado {
+    margin: 0 auto;
+    max-width: 860px;
+}
+
+.alerta-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-1);
+}
+
+.alerta-titulo h2 {
+    margin: 0;
+}
+
+.alerta-detalle {
+    margin: var(--espacio-1) 0;
+}
+
+/* Tarjeta de progreso */
+.progreso-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-2);
+}
+
+.progreso-cabecera h2 {
+    margin: 0;
+}
+
+.btn-reiniciar {
+    padding: 6px 14px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    font-size: var(--texto-chico);
+    font-weight: bold;
+}
+
+.porcentaje {
+    font-size: 32px;
+    font-weight: bold;
+    margin: var(--espacio-2) 0 var(--espacio-1) 0;
+}
+
+.progreso {
+    height: 10px;
+}
+
+.progreso-detalle {
+    margin-top: var(--espacio-2);
+}
+
+/* Pestañas Antes / Durante / Despues */
+.pestanas {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+    margin-bottom: var(--espacio-2);
+    background-color: #e8ecf2;
+    border-radius: var(--radio);
+}
+
+.pestana {
+    flex: 1;
+    padding: 10px 4px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-texto-suave);
+    font-size: var(--texto-chico);
+    font-family: var(--fuente);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pestana.activa {
+    background-color: white;
+    color: var(--color-texto);
+    box-shadow: 0 1px 3px rgba(15, 32, 56, 0.15);
+}
+
+/* Lista: cada paso es una tarjeta */
+.lista-items {
+    margin: 0 0 var(--espacio-2) 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-items li {
+    margin-bottom: var(--espacio-1);
+}
+
+.item-plan {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-size: var(--texto-normal);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item-plan:hover {
+    background-color: var(--color-superficie-2);
+}
+
+/* Las casillas no deben ocupar todo el ancho */
+.item-plan input {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Paso ya hecho */
+.item-listo {
+    color: var(--color-texto-suave);
+    text-decoration: line-through;
+}
+
+/* Puntos de encuentro */
+.destinos-enlace {
+    margin-top: var(--espacio-2);
+}
+
+.destino-info strong,
+.destino-info p {
+    display: block;
+}
+
+/* Contactos */
+.contacto-acciones {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-1);
+    flex-shrink: 0;
+}
+
+.btn-quitar {
+    padding: 4px 10px;
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Formulario de contacto */
+.campos-tres {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 var(--espacio-2);
+}
+
+.fila-boton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--espacio-2);
+}
+
+.btn-oscuro {
+    background-color: var(--color-menu);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-oscuro:hover {
+    background-color: var(--color-menu-activo);
+}
+
+/* Mensajes del formulario (se muestran con JS) */
+.mensaje {
+    display: none;
+    margin-top: var(--espacio-2);
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.error {
+    background-color: var(--color-alerta-fondo);
+    color: var(--color-sos-hover);
+}
+
+.exito {
+    background-color: #dff3e6;
+    color: var(--color-exito);
+}
+
+@media (min-width: 768px) {
+    .pestana {
+        font-size: var(--texto-normal);
+    }
+
+    .item-plan {
+        font-weight: normal;
+    }
+
+    .campos-tres {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
