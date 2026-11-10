@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Voluntarios | RescateVivo</title>
+    <link rel="stylesheet" href="../css/inicio.css">
+    <link rel="stylesheet" href="../css/voluntarios.css">
+</head>
+
+<body>
+    <nav class="menu" aria-label="Menú principal">
+        <div class="menu-marca">
+            <span class="menu-logo" aria-hidden="true">🚨</span>
+            <div><strong>RescateVivo</strong><span class="menu-subtitulo">Multiespecie</span></div>
+        </div>
+        <ul class="menu-lista">
+            <li><a class="menu-enlace" href="../index.html"><span class="menu-icono" aria-hidden="true">🏠</span>Inicio</a></li>
+            <li><a class="menu-enlace" href="perfil.html"><span class="menu-icono" aria-hidden="true">👪</span>Perfil</a></li>
+            <li><a class="menu-enlace" href="plan.html"><span class="menu-icono" aria-hidden="true">📋</span>Plan</a></li>
+            <li><a class="menu-enlace" href="mochila.html"><span class="menu-icono" aria-hidden="true">🎒</span>Mochila</a></li>
+            <li><a class="menu-enlace" href="mapa.html"><span class="menu-icono" aria-hidden="true">📍</span>Mapa</a></li>
+            <li><a class="menu-enlace activo" href="voluntarios.html" aria-current="page"><span class="menu-icono" aria-hidden="true">🤝</span>Voluntarios</a></li>
+        </ul>
+        <a class="btn btn-sos menu-sos" href="#">Enviar S.O.S.</a>
+    </nav>
+
+    <header class="encabezado-pagina">
+        <h1>Voluntarios</h1>
+        <p>Red de ayuda para personas y animales</p>
+    </header>
+
+    <main class="contenido contenido-centrado">
+
+        <!-- Resumen -->
+        <section class="resumen" aria-label="Resumen de voluntarios">
+            <div class="tarjeta resumen-dato">
+                <strong id="total-voluntarios">0</strong>
+                <span class="texto-suave">Voluntarios</span>
+            </div>
+            <div class="tarjeta resumen-dato">
+                <strong id="total-tareas">0</strong>
+                <span class="texto-suave">Tareas abiertas</span>
+            </div>
+            <div class="tarjeta resumen-dato">
+                <strong id="total-cupos">0</strong>
+                <span class="texto-suave">Cupos libres</span>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="tarjeta" aria-label="Filtros de tareas">
+            <div class="filtros-tipo" id="filtros-tipo"></div>
+
+            <div class="filtros-opciones">
+                <label class="opcion-check" for="solo-urgentes">
+                    <input type="checkbox" id="solo-urgentes">
+                    Solo urgentes
+                </label>
+
+                <label class="opcion-check" for="ocultar-completas">
+                    <input type="checkbox" id="ocultar-completas">
+                    Ocultar completas
+                </label>
+            </div>
+        </section>
+
+        <!-- Tareas que necesitan voluntarios -->
+        <div class="tareas" id="lista-tareas"></div>
+        <p class="texto-suave" id="mensaje-vacio"></p>
+
+        <!-- Formulario para ser voluntario -->
+        <section class="tarjeta" aria-labelledby="titulo-registro">
+            <h2 id="titulo-registro">🤝 Quiero ser voluntario</h2>
+
+            <form id="form-voluntario" novalidate>
+                <div class="campos-dos">
+                    <div>
+                        <label for="nombre-voluntario">Nombre completo</label>
+                        <input type="text" id="nombre-voluntario" placeholder="Carlos Mora" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="telefono-voluntario">Teléfono</label>
+                        <input type="tel" id="telefono-voluntario" placeholder="8888-1234" autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="habilidad">Habilidad principal</label>
+                        <select id="habilidad">
+                            <option value="">Seleccioná una habilidad</option>
+                            <option value="Rescate animal">Rescate animal</option>
+                            <option value="Primeros auxilios">Primeros auxilios</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Logística">Logística y donaciones</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="disponibilidad">Disponibilidad</label>
+                        <select id="disponibilidad">
+                            <option value="">Seleccioná un horario</option>
+                            <option value="Mañana">Mañana</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noche">Noche</option>
+                            <option value="Todo el día">Todo el día</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label for="zona">Zona donde podés ayudar</label>
+                <input type="text" id="zona" placeholder="Los Bajos, Cantón Central" autocomplete="off">
+
+                <label class="opcion-check opcion-vehiculo" for="vehiculo">
+                    <input type="checkbox" id="vehiculo">
+                    Tengo vehículo para ayudar a trasladar personas o animales
+                </label>
+
+                <div class="fila-boton">
+                    <button type="submit" class="btn btn-oscuro">Registrarme</button>
+                </div>
+                <p id="mensaje-voluntario" class="mensaje" role="alert"></p>
+            </form>
+        </section>
+
+        <!-- Voluntarios registrados -->
+        <section class="tarjeta" aria-labelledby="titulo-registrados">
+            <h2 id="titulo-registrados">Voluntarios registrados</h2>
+            <ul class="lista-simple" id="lista-voluntarios"></ul>
+        </section>
+
+    </main>
+
+    <script src="../js/voluntarios.js"></script>
+</body>
+
+</html>
