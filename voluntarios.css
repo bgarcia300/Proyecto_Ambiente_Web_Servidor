@@ -1,0 +1,261 @@
+/* ============================================
+   voluntarios.css
+   Estilos solo de la pagina de Voluntarios.
+   (los colores y componentes vienen de inicio.css)
+   Mobile-first: lo de PC va en el media query.
+   ============================================ */
+
+/* Fondo gris clarito con encabezado blanco, como en las otras paginas */
+body {
+    background-color: #f6f8fb;
+}
+
+.encabezado-pagina {
+    background-color: white;
+}
+
+/* Contenido centrado */
+.contenido-centrado {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* ==================== Resumen ==================== */
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-1);
+    margin-bottom: var(--espacio-2);
+}
+
+.resumen-dato {
+    margin-bottom: 0;
+    padding: 12px var(--espacio-1);
+    text-align: center;
+}
+
+.resumen-dato strong,
+.resumen-dato span {
+    display: block;
+}
+
+.resumen-dato strong {
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.resumen-dato span {
+    font-size: 12px;
+}
+
+/* ==================== Filtros ==================== */
+.filtros-tipo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1);
+}
+
+/* Boton de tipo: oscuro cuando esta activo */
+.btn-tipo {
+    padding: 6px 12px;
+    background-color: var(--color-menu);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-tipo:hover {
+    background-color: var(--color-menu-activo);
+}
+
+/* Cuando se apaga el filtro */
+.btn-tipo.apagado {
+    background-color: white;
+    color: var(--color-texto-suave);
+    border: 1px solid var(--color-borde);
+}
+
+.filtros-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-2) var(--espacio-3);
+    margin-top: var(--espacio-2);
+}
+
+/* Casilla con texto (las casillas no deben ocupar todo el ancho) */
+.opcion-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: var(--texto-chico);
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.opcion-check input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.opcion-vehiculo {
+    margin-top: var(--espacio-2);
+}
+
+/* ==================== Tarjetas de tareas ==================== */
+.tareas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio-2);
+    margin-bottom: var(--espacio-2);
+}
+
+.tareas .tarjeta {
+    margin-bottom: 0;
+}
+
+.tarea-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--espacio-1);
+}
+
+.tarea-titulo h2 {
+    margin: 0;
+}
+
+.tarea-lugar {
+    margin: 4px 0 var(--espacio-1) 0;
+}
+
+.tarea-descripcion {
+    margin-bottom: var(--espacio-1);
+}
+
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.etiqueta {
+    padding: 3px 12px;
+    border-radius: 6px;
+    background-color: var(--color-superficie-2);
+    font-size: 13px;
+}
+
+.capacidad {
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.capacidad-texto {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--espacio-1);
+}
+
+.progreso {
+    height: 8px;
+}
+
+/* Botones de Inscribirme / Cancelar */
+.btn-inscribir {
+    width: 100%;
+    background-color: var(--color-menu);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-inscribir:hover {
+    background-color: var(--color-menu-activo);
+}
+
+.btn-inscribir.inscrito {
+    background-color: white;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+.btn-inscribir.inscrito:hover {
+    background-color: var(--color-superficie-2);
+}
+
+.btn-inscribir:disabled {
+    background-color: var(--color-borde);
+    color: var(--color-texto-suave);
+    cursor: not-allowed;
+}
+
+/* Tarea completa: se ve apagada */
+.tarea-completa {
+    opacity: 0.6;
+}
+
+/* ==================== Formulario ==================== */
+.campos-dos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 var(--espacio-2);
+}
+
+.fila-boton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--espacio-2);
+}
+
+.btn-oscuro {
+    background-color: var(--color-menu);
+    color: white;
+    font-weight: bold;
+}
+
+.btn-oscuro:hover {
+    background-color: var(--color-menu-activo);
+}
+
+/* Mensajes del formulario (se muestran con JS) */
+.mensaje {
+    display: none;
+    margin-top: var(--espacio-2);
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.error {
+    background-color: var(--color-alerta-fondo);
+    color: var(--color-sos-hover);
+}
+
+.exito {
+    background-color: #dff3e6;
+    color: var(--color-exito);
+}
+
+/* ==================== Version para PC ==================== */
+@media (min-width: 768px) {
+    .resumen {
+        gap: var(--espacio-2);
+    }
+
+    .resumen-dato span {
+        font-size: var(--texto-chico);
+    }
+
+    .tareas {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campos-dos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
